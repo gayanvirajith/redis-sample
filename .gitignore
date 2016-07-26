@@ -1,0 +1,7 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+/home/gayan/Dev/redis-lesson/public/node-socket-server/node_modules
