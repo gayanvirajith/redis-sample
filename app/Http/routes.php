@@ -14,7 +14,17 @@ use Illuminate\Support\Facades\Redis;
 
 Route::get('/', function () {
 
-	Redis::set('name', 'Gayan');
-	return Redis::get('name');
-    return view('welcome');
+	// Redis::set('name', 'Gayan');
+	// return Redis::get('name');
+
+  $data = [
+    'event' => 'UserSignedUp',
+    'data' => [
+      'username' => 'JohnDoe'
+    ]
+  ];
+
+  Redis::publish('test-channel', json_encode($data));
+  // return 'Done';
+  return view('angular-app');
 });
